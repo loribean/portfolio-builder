@@ -1,5 +1,5 @@
 import React from 'react';
-
+import 'grapesjs/dist/css/grapes.min.css';
 
 import { BrowserRouter as Router } from 'react-router-dom'
 import BaseRouter from './routes'
