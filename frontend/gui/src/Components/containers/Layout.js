@@ -19,7 +19,7 @@ const CustomLayout = (props) => {
             <Content style={{ padding: '0 50px' }}>
                 <Breadcrumb style={{ margin: '16px 0' }}>
                     <Breadcrumb.Item><Link to="/">Home</Link></Breadcrumb.Item>
-                    <Breadcrumb.Item><Link></Link></Breadcrumb.Item>
+                    <Breadcrumb.Item><Link to="/create">Create New Template</Link></Breadcrumb.Item>
                 </Breadcrumb>
                 <div className="site-layout-content">{props.children}</div>
             </Content>

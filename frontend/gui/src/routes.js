@@ -2,7 +2,9 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import ResumeList from './Components/containers/ResumeListView'
 import ResumeDetail from './Components/containers/ResumeDetailView'
-import Edit from './Components/Edit'
+import Editor from './Components/Create'
+import Success from './Components/Success'
+import EditExisting from './Components/EditExisting'
 
 
 const BaseRouter = () => {
@@ -10,7 +12,10 @@ const BaseRouter = () => {
         <div>
             <Route exact path='/' component={ResumeList} />
             <Route exact path='/:resumeID' component={ResumeDetail} />
-            <Route exact path='/create' component={Edit} />
+            <Route exact path='/api/create/' component={Success} />
+            <Route exact path='/create' component={Editor} />
+            <Route exact path='/edit/:resumeID' component={EditExisting} />
+
 
         </div>
     )
