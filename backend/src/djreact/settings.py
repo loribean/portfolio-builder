@@ -37,10 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth', 
+    'allauth.account',
+    'allauth.socialaccount',
+    'rest_auth.registration',
     'rest_framework',
     'corsheaders',
     'resumes',
+    'rest_framework.authtoken',
+    'rest_auth',
 ]
+SITE_ID = 1
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -134,5 +142,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+ACCOUNT_EMAIL_VERIFICATION ='none'
+ACCOUNT_AUTHENTICATION = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
+APPEND_SLASH=False
 
 
