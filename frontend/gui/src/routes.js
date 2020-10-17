@@ -11,10 +11,10 @@ const BaseRouter = () => {
     return (
         <div>
             <Route exact path='/' component={ResumeList} />
-            <Route exact path='/:resumeID' component={ResumeDetail} />
-            <Route exact path='/api/create/' component={Success} />
             <Route exact path='/create' component={Editor} />
-            <Route exact path='/edit/:resumeID' component={EditExisting} />
+            <Route exact path='/edit/:resumeID' component={ResumeDetail} />
+            <Route exact path='/api/create/' component={Success} />
+
 
 
         </div>

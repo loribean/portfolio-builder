@@ -1,9 +1,7 @@
 
 import React, { useRef } from 'react';
-import { render } from 'react-dom'
 import EmailEditor from 'react-email-editor';
 import DjangoCSRFToken from 'django-react-csrftoken';
-import axios from 'axios';
 import Cookies from 'js-cookie'
 
 
@@ -52,6 +50,7 @@ const EditExisting = (props) => {
             onDesignLoad
         );
         emailEditorRef.current.editor.loadDesign(props.content);
+        console.log(props.content, '---props')
     };
 
 
