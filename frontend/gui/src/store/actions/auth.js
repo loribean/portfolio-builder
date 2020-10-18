@@ -14,6 +14,13 @@ export const authSuccess = token => {
     }
 }
 
+export const idSuccess = userid => {
+    return {
+        type: actionTypes.AUTH_ID,
+        userid: userid
+    }
+}
+
 export const authFail = error => {
     return {
         type: actionTypes.AUTH_FAIL,
@@ -24,6 +31,7 @@ export const authFail = error => {
 export const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('expirationDate');
+    localStorage.removeItem('username')
     return {
         type: actionTypes.AUTH_LOGOUT
     };
@@ -41,20 +49,38 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://localhost:8000/rest-auth/login/', {
+        axios.post('http://localhost:8000/dj-rest-auth/login/', {
             username: username,
             password: password
         })
             .then(res => {
                 const token = res.data.key
+                getid(res.data.key)
                 const expirationDate = new Date(new Date().getTime() + 3600 * 1000)
                 localStorage.setItem('token', token)
+                localStorage.setItem('username', username)
                 localStorage.setItem('expirationDate', expirationDate)
                 dispatch(authSuccess(token))
                 dispatch(checkAuthTimeout(3600))
+                console.log(token, '---back w token')
+                return token
+            })
+            .then(token => {
+                console.log('getid is firing')
+                axios.defaults.headers = {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Token ${token}`
+                }
+                axios.get(`http://localhost:8000/dj-rest-auth/user/`
+                ).then(response => {
+                    localStorage.setItem('userdata', response.data.pk)
+                    console.log(response.data.pk)
+                })
+
+
             })
             .catch(err => {
-                dispatch(authFail(err))
+                dispatch(authFail(err.message))
             })
 
     }
@@ -63,7 +89,7 @@ export const authLogin = (username, password) => {
 export const signup = (username, email, password1, password2) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://localhost:8000/rest-auth/registration/', {
+        axios.post('http://localhost:8000/dj-rest-auth/registration/', {
             username: username,
             email: email,
             password1: password1,
@@ -73,6 +99,7 @@ export const signup = (username, email, password1, password2) => {
                 const token = res.data.key
                 const expirationDate = new Date(new Date().getTime() + 3600 * 1000)
                 localStorage.setItem('token', token)
+                localStorage.setItem('username', username)
                 localStorage.setItem('expirationDate', expirationDate)
                 dispatch(authSuccess(token))
                 dispatch(checkAuthTimeout(3600))
@@ -98,5 +125,30 @@ export const authCheckState = () => {
                 dispatch(checkAuthTimeout((expirationDate.getTime() - new Date().getTime()) / 1000))
             }
         }
+    }
+}
+
+export const getid = (token) => {
+    return dispatch => {
+
+        console.log('getid is firing')
+        axios.get(`http://localhost:8000/dj-rest-auth/user/`, {
+            credentials: 'omit',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Token ${token}`
+            }
+        }
+        ).then(res => {
+            const userid = res.data.pk
+            localStorage.setItem('userid', userid)
+            dispatch(idSuccess(userid))
+
+        }).catch(Error => {
+            console.log(Error)
+        })
+
+
     }
 }

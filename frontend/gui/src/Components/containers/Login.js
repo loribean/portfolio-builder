@@ -31,8 +31,11 @@ const Demo = (props) => {
     }
     const onFinish = (values) => {
         console.log('Success:', values);
-        props.onAuth(values.username, values.password)
-        props.history.push('/');
+        Promise.resolve(props.onAuth(values.username, values.password))
+            .then(console.log('hello'))
+            .then(console.log('am I done yet?'))
+
+
     };
 
     const onFinishFailed = (errorInfo) => {
@@ -102,13 +105,17 @@ const Demo = (props) => {
 function mapStateToProps(state) {
     return {
         loading: state.loading,
-        error: state.error
+        error: state.error,
+        token: state.token
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        onAuth: (username, password) => dispatch(actions.authLogin(username, password))
+        onAuth: (username, password) => dispatch(actions.authLogin(username, password)
+        ),
+        getid: (token) => dispatch(actions.getid(token))
+
     }
 }
 
