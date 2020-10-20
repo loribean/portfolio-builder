@@ -95,7 +95,6 @@ TEMPLATES = [
     },
 ]
 
-django_heroku.settings(locals())
 WSGI_APPLICATION = 'djreact.wsgi.application'
 
 
