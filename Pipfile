@@ -6,9 +6,6 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-
-[requires]
-python_version = "3.8"
 asgiref="3.2.10"
 certifi="2020.6.20"
 cffi="1.14.3"
@@ -35,3 +32,6 @@ six="1.15.0"
 sqlparse="0.4.1"
 urllib3="1.25.11"
 whitenoise="5.2.0"
+
+[requires]
+python_version = "3.8"
