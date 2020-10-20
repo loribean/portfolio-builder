@@ -16,10 +16,11 @@ const BaseRouter = () => {
             <Route exact path='/' component={ResumeList} />
             <Route exact path='/create' component={Editor} />
             <Route exact path='/edit/:resumeID/' component={ResumeDetail} />
-            <Route exact path='/api/create/' component={Success} />
+            <Route exact path='/success' component={Success} />
             <Route exact path='/login/' component={Login} />
             <Route exact path='/signup/' component={Signup} />
             <Route exact path='/mytemplates/' component={MyTemplates} />
+
 
 
 

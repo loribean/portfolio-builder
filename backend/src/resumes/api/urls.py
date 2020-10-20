@@ -10,12 +10,13 @@
 
 from django.urls import path
 
-from .views import (ResumeListView, ResumeDetailView,ResumeUpdateView,ResumeDeleteView)
+from .views import (ResumeListView, ResumeDetailView,ResumeUpdateView,ResumeDeleteView,CommentListView)
 
 urlpatterns = [
     path('',ResumeListView.as_view()),
     path('<pk>',ResumeDetailView.as_view()),
     path('<pk>/update/',ResumeUpdateView.as_view()),
     path('<pk>/delete/',ResumeDeleteView.as_view()),
+    path('comment/<resume>/',CommentListView.as_view()),
    
 ]

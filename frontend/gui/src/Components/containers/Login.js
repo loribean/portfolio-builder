@@ -31,10 +31,8 @@ const Demo = (props) => {
     }
     const onFinish = (values) => {
         console.log('Success:', values);
-        Promise.resolve(props.onAuth(values.username, values.password))
-            .then(console.log('hello'))
-            .then(console.log('am I done yet?'))
-
+        props.onAuth(values.username, values.password);
+        props.history.push('/success');
 
     };
 

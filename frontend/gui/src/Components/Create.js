@@ -1,8 +1,9 @@
 
-import React, { useRef, useStaate } from 'react';
+import React, { useRef, useState } from 'react';
 import EmailEditor from 'react-email-editor';
 import DjangoCSRFToken from 'django-react-csrftoken';
 import Cookies from 'js-cookie'
+import domtoimage from 'dom-to-image';
 
 
 
@@ -11,9 +12,17 @@ import Cookies from 'js-cookie'
 const Editor = (props) => {
     const emailEditorRefNew = useRef(null);
 
+    // const printDocument = () => {
+    //     const input = exportHtml()
+
+
+    //     domtoimage.toPng(input)
+
+    // }
 
 
     const saveDesign = () => {
+        // printDocument()
         emailEditorRefNew.current.editor.saveDesign((design) => {
             let title = document.getElementById("title").value
 

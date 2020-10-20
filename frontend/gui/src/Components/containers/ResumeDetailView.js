@@ -3,36 +3,48 @@ import axios from 'axios'
 import { Card } from "antd";
 import EditExisting from '../EditExisting';
 import { connect } from "react-redux";
+import CommentContainer from './CommentContainer';
+import { Spin } from 'antd';
+
 
 
 
 class ResumeDetail extends React.Component {
 
     state = {
-        resume: {}
     }
-    componentDidUpdate(prevProps) {
-        if (prevProps.token !== this.props.token) {
-            axios.defaults.headers = {
-                "Content-Type": "application/json",
-                Authorization: this.props.token
-            }
-            const resumeID = this.props.match.params.resumeID
-            axios.get(`http://localhost:8000/api/${resumeID}`)
-                .then(res => {
-                    this.setState({ resume: res.data })
-                })
+    componentDidMount() {
+
+        axios.defaults.headers = {
+            "Content-Type": "application/json",
+            Authorization: this.props.token
         }
+        const resumeID = this.props.match.params.resumeID
+        axios.get(`http://localhost:8000/api/${resumeID}`)
+            .then(res => {
+                this.setState({ resume: res.data })
+            })
+
 
     }
 
 
     render() {
+
         return (
             <>
-                <Card title={this.state.resume.title}>
-                </Card>
-                <EditExisting content={this.state.resume.content} title={this.state.resume.title} id={this.props.match.params.resumeID} />
+                { this.state.resume ?
+                    <>
+                        <Card title={this.state.resume.title}>
+                        </Card>
+                        <EditExisting content={this.state.resume.content} title={this.state.resume.title} id={this.props.match.params.resumeID} user={this.state.resume.user} />
+                        <p>Comments:</p>
+                        <CommentContainer id={this.props.match.params.resumeID} />
+                    </>
+
+                    :
+                    <Spin />
+                }
             </>
 
         );

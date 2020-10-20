@@ -5,9 +5,6 @@ import DjangoCSRFToken from 'django-react-csrftoken';
 import Cookies from 'js-cookie'
 
 
-
-
-
 const EditExisting = (props) => {
     const emailEditorRef = useRef(null);
 
@@ -26,6 +23,7 @@ const EditExisting = (props) => {
             })
                 .then(function (response) {
                     console.log(response);
+                    alert('Successfully saved your template!')
                 })
 
         });
@@ -36,32 +34,47 @@ const EditExisting = (props) => {
             const { design, html } = data;
             console.log('exportHtml', html);
             alert('Output HTML has been logged in your developer console.');
-        });
-    };
 
-    const onDesignLoad = (data) => {
-        console.log('onDesignLoad', data);
+            let html2 = new Blob([html], {
+                type: "application/pdf"
+            });
+
+            let url = URL.createObjectURL(html2)
+            let a = document.createElement('a');
+            a.href = url
+            a.download = 'index.html';
+            a.click();
+        });
     };
 
 
     const onLoad = () => {
-        emailEditorRef.current.editor.addEventListener(
-            'onDesignLoad',
-            onDesignLoad
-        );
         emailEditorRef.current.editor.loadDesign(props.content);
-        console.log(props.content, '---props')
+        console.log(props, '---props')
     };
 
 
     return (
-        <div>
-            <button onClick={saveDesign}>Save Design</button>
-            <button onClick={exportHtml}>Export HTML</button>
-            <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
-            <DjangoCSRFToken />
+        <>
+            {
+                props.user === parseInt(localStorage.getItem('userdata')) ?
+                    <div>
 
-        </div>
+                        <button onClick={saveDesign}>Save Design</button>
+                        <button onClick={exportHtml}>Download HTML</button>
+                        <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
+                        <DjangoCSRFToken />
+
+                    </div>
+                    : <div>
+
+                        <button onClick={exportHtml}>Download HTML</button>
+                        <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
+                        <DjangoCSRFToken />
+
+                    </div>
+            }
+        </>
     );
 };
 

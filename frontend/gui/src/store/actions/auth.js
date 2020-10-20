@@ -77,7 +77,6 @@ export const authLogin = (username, password) => {
                     console.log(response.data.pk)
                 })
 
-
             })
             .catch(err => {
                 dispatch(authFail(err.message))

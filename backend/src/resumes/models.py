@@ -14,4 +14,16 @@ class Resume(models.Model):
 
     def __str__(self):
         return self.title
-    
+
+class Comment(models.Model):
+    resume = models.ForeignKey(Resume,on_delete=models.CASCADE,related_name='comments')
+    name = models.CharField(max_length=80,default=DEFAULT_ID)
+    userid = models.CharField(max_length=50,default=DEFAULT_ID)
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return 'Comment {} by {}'.format(self.body, self.name)
