@@ -53,9 +53,10 @@ class CommentContainer extends React.Component {
                 Authorization: this.props.token
             }
         })
+            .then(res => res.json())
             .then(res => {
 
-                this.setState({ commentsList: res.data })
+                this.setState({ commentsList: res })
             })
 
     }

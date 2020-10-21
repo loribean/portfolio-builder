@@ -23,8 +23,9 @@ class ResumeDetail extends React.Component {
                 Authorization: this.props.token
             }
         })
+            .then(res => res.json())
             .then(res => {
-                this.setState({ resume: res.data })
+                this.setState({ resume: res })
             })
 
 

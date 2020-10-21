@@ -53,20 +53,16 @@ export const authLogin = (username, password) => {
             username: username,
             password: password
         }
-        console.log(data)
         fetch('/dj-rest-auth/login/', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
             }
-        })
-            .then(res => {
-                return res.json()
-            })
-            .then(res => {
-                const token = res.data.key
-                getid(res.data.key)
+        }).then(res => res.json())
+            .then(json => {
+                const token = json.key
+                console.log(token)
                 const expirationDate = new Date(new Date().getTime() + 3600 * 1000)
                 localStorage.setItem('token', token)
                 localStorage.setItem('username', username)
@@ -86,12 +82,11 @@ export const authLogin = (username, password) => {
                     }
                 }
 
-                ).then(res => {
-                    return res.json()
-                }).then(response => {
-                    localStorage.setItem('userdata', response.data.pk)
-                    console.log(response.data.pk)
-                })
+                ).then(res => res.json())
+                    .then(response => {
+                        localStorage.setItem('userdata', response.pk)
+                        console.log(response.pk)
+                    })
 
             })
             .catch(err => {
@@ -119,11 +114,9 @@ export const signup = (username, email, password1, password2) => {
                 'Content-Type': 'application/json'
             }
         })
+            .then(res => res.json())
             .then(res => {
-                return res.json()
-            })
-            .then(res => {
-                const token = res.data.key
+                const token = res.key
                 const expirationDate = new Date(new Date().getTime() + 3600 * 1000)
                 localStorage.setItem('token', token)
                 localStorage.setItem('username', username)

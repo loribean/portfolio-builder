@@ -1,6 +1,5 @@
 import React from 'react'
 import Resumes from '../Resume'
-import axios from 'axios'
 import { connect } from "react-redux"
 
 
@@ -17,13 +16,10 @@ class ResumeList extends React.Component {
                 'Content-Type': 'application/json'
             }
         })
-            .then(res => {
-                let response = res.json()
-                return response
-            })
+            .then(res => res.json())
             .then(response => {
                 console.log(response)
-                this.setState({ resumes: response.data })
+                this.setState({ resumes: response })
             })
 
     }

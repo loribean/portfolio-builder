@@ -30,7 +30,6 @@ const Demo = (props) => {
         );
     }
     const onFinish = (values) => {
-        console.log('Success:', values);
         props.onAuth(values.username, values.password);
         props.history.push('/success');
 

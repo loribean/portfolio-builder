@@ -20,12 +20,10 @@ class MyTemplates extends React.Component {
                 'Content-Type': 'application/json',
             }
         })
+            .then(res => res.json())
             .then(res => {
-                res.json()
-                return res
-            })
-            .then(res => {
-                let filteredres = res.data.filter(item =>
+                console.log(res)
+                let filteredres = res.filter(item =>
                     item.user === this.state.userid
                 )
                 return filteredres
