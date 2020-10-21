@@ -56,7 +56,10 @@ export const authLogin = (username, password) => {
         console.log(data)
         fetch('/dj-rest-auth/login/', {
             method: 'POST',
-            body: JSON.stringify(data)
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         })
             .then(res => {
                 return res.json()
