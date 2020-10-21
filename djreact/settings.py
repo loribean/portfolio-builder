@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import dj_database_url 
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -109,7 +109,7 @@ DATABASES = {
     }
 }
 
-import dj_database_url 
+
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 
