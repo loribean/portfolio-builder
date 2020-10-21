@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'whitenoise.runserver_nostatic', 
     'allauth', 
     'allauth.account',
     'allauth.socialaccount',
@@ -109,6 +108,10 @@ DATABASES = {
         'NAME': 'resume-builder',
     }
 }
+
+import dj_database_url 
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
