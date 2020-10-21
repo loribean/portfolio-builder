@@ -12,13 +12,18 @@ class ResumeList extends React.Component {
 
     componentDidMount() {
 
-        axios.defaults.headers = {
-            'Content-Type': 'application/json',
-        }
-
-        axios.get(`http://localhost:8000/api/`)
+        fetch(`/api/`, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
             .then(res => {
-                this.setState({ resumes: res.data })
+                let response = res.json()
+                return response
+            })
+            .then(response => {
+                console.log(response)
+                this.setState({ resumes: response.data })
             })
 
     }

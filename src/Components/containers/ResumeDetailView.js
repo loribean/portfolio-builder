@@ -15,12 +15,14 @@ class ResumeDetail extends React.Component {
     }
     componentDidMount() {
 
-        axios.defaults.headers = {
-            "Content-Type": "application/json",
-            Authorization: this.props.token
-        }
+
         const resumeID = this.props.match.params.resumeID
-        axios.get(`http://localhost:8000/api/${resumeID}`)
+        fetch(`/api/${resumeID}`, {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: this.props.token
+            }
+        })
             .then(res => {
                 this.setState({ resume: res.data })
             })

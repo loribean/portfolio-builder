@@ -13,11 +13,17 @@ class MyTemplates extends React.Component {
 
     componentDidMount() {
 
-        axios.defaults.headers = {
-            'Content-Type': 'application/json',
-        }
 
-        axios.get(`http://localhost:8000/api/`)
+
+        fetch(`/api/`, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+            .then(res => {
+                res.json()
+                return res
+            })
             .then(res => {
                 let filteredres = res.data.filter(item =>
                     item.user === this.state.userid

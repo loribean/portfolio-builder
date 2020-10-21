@@ -56,8 +56,7 @@ class CustomLayout extends React.Component {
 
 function mapDispatchToProps(dispatch) {
     return {
-        logout: () => dispatch(actions.logout()),
-        getid: (token) => dispatch(actions.getid(token))
+        logout: () => dispatch(actions.logout())
     }
 }
 

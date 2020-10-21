@@ -17,7 +17,7 @@ class CommentContainer extends React.Component {
     handleClick = () => {
         let data = { resume: this.props.id, name: localStorage.getItem('username'), userid: localStorage.getItem('userdata'), body: this.state.body, "csrfmiddlewaretoken": Cookies.get('csrftoken') }
         console.log(data)
-        fetch(`http://localhost:8000/api/comment/${this.props.id}/`, {
+        fetch(`/api/comment/${this.props.id}/`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
@@ -46,11 +46,13 @@ class CommentContainer extends React.Component {
         this.setState({ body: e.target.value })
     }
     componentDidMount() {
-        axios.defaults.headers = {
-            "Content-Type": "application/json",
-            Authorization: this.props.token
-        }
-        axios.get(`http://localhost:8000/api/comment/${this.props.id}/`)
+
+        fetch(`/api/comment/${this.props.id}/`, {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: this.props.token
+            }
+        })
             .then(res => {
 
                 this.setState({ commentsList: res.data })

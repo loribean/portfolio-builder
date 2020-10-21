@@ -111,8 +111,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         onAuth: (username, password) => dispatch(actions.authLogin(username, password)
-        ),
-        getid: (token) => dispatch(actions.getid(token))
+        )
 
     }
 }

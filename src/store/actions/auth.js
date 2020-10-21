@@ -49,10 +49,18 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://localhost:8000/dj-rest-auth/login/', {
+        let data = {
             username: username,
             password: password
+        }
+        console.log(data)
+        fetch('/dj-rest-auth/login/', {
+            method: 'POST',
+            body: JSON.stringify(data)
         })
+            .then(res => {
+                return res.json()
+            })
             .then(res => {
                 const token = res.data.key
                 getid(res.data.key)
@@ -67,12 +75,17 @@ export const authLogin = (username, password) => {
             })
             .then(token => {
                 console.log('getid is firing')
-                axios.defaults.headers = {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Token ${token}`
+
+                fetch(`/dj-rest-auth/user/`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Token ${token}`
+                    }
                 }
-                axios.get(`http://localhost:8000/dj-rest-auth/user/`
-                ).then(response => {
+
+                ).then(res => {
+                    return res.json()
+                }).then(response => {
                     localStorage.setItem('userdata', response.data.pk)
                     console.log(response.data.pk)
                 })
@@ -88,12 +101,24 @@ export const authLogin = (username, password) => {
 export const signup = (username, email, password1, password2) => {
     return dispatch => {
         dispatch(authStart());
-        axios.post('http://localhost:8000/dj-rest-auth/registration/', {
+        let data = {
             username: username,
             email: email,
             password1: password1,
             password2: password2
+        }
+        console.log(data)
+        fetch('/dj-rest-auth/registration/', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
         })
+            .then(res => {
+                return res.json()
+            })
             .then(res => {
                 const token = res.data.key
                 const expirationDate = new Date(new Date().getTime() + 3600 * 1000)

@@ -27,7 +27,7 @@ SECRET_KEY = '6p^rw&tpr_6t$q(oxm9q+0y(qb1-piu=u(+y2_f4scfb3moba3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['portfolio-builder-x.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['portfolio-builder-x.herokuapp.com', '127.0.0.1','localhost']
 
 
 # Application definition

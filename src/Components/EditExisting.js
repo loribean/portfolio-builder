@@ -13,7 +13,7 @@ const EditExisting = (props) => {
         emailEditorRef.current.editor.saveDesign((design) => {
             let data = { title: props.title, content: design, id: props.id, "csrfmiddlewaretoken": Cookies.get('csrftoken') }
             console.log(data)
-            fetch(`http://localhost:8000/api/${props.id}/update/`, {
+            fetch(`/api/${props.id}/update/`, {
                 method: 'PUT',
                 body: JSON.stringify(data),
                 headers: {

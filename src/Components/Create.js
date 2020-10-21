@@ -28,7 +28,7 @@ const Editor = (props) => {
 
             let data = { title: title, content: design, user: localStorage.getItem('userdata'), "csrfmiddlewaretoken": Cookies.get('csrftoken') }
             console.log(data)
-            fetch('http://localhost:8000/api/', {
+            fetch('/api/', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
