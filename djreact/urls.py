@@ -9,5 +9,5 @@ urlpatterns = [
      path('dj-rest-auth/', include('dj_rest_auth.urls')),
     path('dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('api/', include('resumes.api.urls')),
-    re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
+    # re_path(r'^.*', TemplateView.as_view(template_name='index.html')),
 ]
