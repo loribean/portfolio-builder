@@ -12,9 +12,6 @@ class MyTemplates extends React.Component {
     }
 
     componentDidMount() {
-
-
-
         fetch(`/api/`, {
             headers: {
                 'Content-Type': 'application/json',

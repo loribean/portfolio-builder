@@ -7,13 +7,16 @@ import Success from './Components/Success'
 import Login from './Components/containers/Login'
 import Signup from './Components/containers/Signup'
 import MyTemplates from './Components/containers/MyTemplates'
+import Landing from './Components/containers/Landing'
+
 
 
 
 const BaseRouter = () => {
     return (
         <div>
-            <Route exact path='/' component={ResumeList} />
+            <Route exact path='/' component={Landing} />
+            <Route exact path='/timeline' component={ResumeList} />
             <Route exact path='/create' component={Editor} />
             <Route exact path='/edit/:resumeID/' component={ResumeDetail} />
             <Route exact path='/success' component={Success} />
