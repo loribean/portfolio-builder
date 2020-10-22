@@ -26,7 +26,7 @@ class Landing extends React.Component {
                             <h2 class="subheader">Effortlessly make a job-worthy resume portfolio that gets you hired faster</h2>
                             <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
-                        <div class="four columns" id="hero"> <img src="man-working.png" class="phoneFeature" alt="phone mockup" />  </div>
+                        <div class="four columns" id="hero"> <img src="https://cdn.dribbble.com/users/1568450/screenshots/5430738/work_2_dribbble-01.png" class="phoneFeature" alt="phone mockup" />  </div>
                     </div>
                 </div>
 
