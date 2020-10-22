@@ -96,6 +96,9 @@ const Demo = (props) => {
                         </Form.Item>
                     </Form>
             }
+            <div className="footerLog">
+                <img src="bg12-1.png" class="phone device" alt="phone mockup" />
+            </div>
         </div>
     );
 };

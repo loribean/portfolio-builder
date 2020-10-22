@@ -3,12 +3,17 @@ import { connect } from 'react-redux'
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { Link, withRouter } from "react-router-dom";
 import * as actions from '../../store/actions/auth';
-import Cookies from 'js-cookie'
 
 
-const { Header, Content, Footer } = Layout;
+
+const { Header, Content } = Layout;
 
 class CustomLayout extends React.Component {
+
+    handleLogout = () => {
+        this.props.logout()
+        this.props.history.push('/')
+    }
 
     render() {
         return (
@@ -23,7 +28,7 @@ class CustomLayout extends React.Component {
                                     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
                                         <Menu.Item key="4">
                                             <Link style={{ paddingLeft: '50px' }} to="/">  <img src="https://jeffbredenkamp.neocities.org/geologo.png" alt="logo" class="logo" style={{ width: '32px' }} /></Link></Menu.Item>
-                                        <Menu.Item key="2" onClick={this.props.logout}>
+                                        <Menu.Item key="2" onClick={this.handleLogout}>
                                             Logout</Menu.Item>
                                         <Menu.Item key="1">
                                             <Link to="/timeline">Timeline</Link></Menu.Item>

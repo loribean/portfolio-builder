@@ -23,7 +23,7 @@ class Landing extends React.Component {
                     <div class="row hero">
                         <div class="eight columns">
                             <h1 class="header">Portfolio Builder</h1>
-                            <h2 class="subheader">Effortlessly make a job-worthy resume that gets you hired faster</h2>
+                            <h2 class="subheader">Effortlessly make a job-worthy resume portfolio that gets you hired faster</h2>
                             <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                         </div>
                         <div class="four columns" id="hero"> <img src="man-working.png" class="phoneFeature" alt="phone mockup" />  </div>
@@ -63,21 +63,21 @@ class Landing extends React.Component {
                                 <div class="row">
                                     <div class="three columns"> <span class="typcn typcn-location-outline icon"></span> </div>
                                     <div class="nine columns">
-                                        <h2>Location</h2>
+                                        <h2>Save Your Designs</h2>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="three columns"> <span class="typcn typcn-lightbulb icon"></span> </div>
                                     <div class="nine columns">
-                                        <h2>Ideas</h2>
+                                        <h2>Get inspiration from others</h2>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="three columns"> <span class="typcn typcn-spanner-outline icon"></span> </div>
                                     <div class="nine columns">
-                                        <h2>Customisable</h2>
+                                        <h2>Easy Export as HTML</h2>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@ class Landing extends React.Component {
 
                                 <div class="row">
                                     <div class="nine columns">
-                                        <h2>Secure</h2>
+                                        <h2>Drag And Drop</h2>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                                     </div>
                                     <div class="three columns"> <span class="typcn typcn-key-outline icon"></span> </div>
