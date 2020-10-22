@@ -101,14 +101,14 @@ const RegistrationForm = (props) => {
 
 
             <Form.Item >
-                <input type="submit" value="submit" />
-                            Or
-                    <NavLink
-                    style={{ marginRight: '10px' }}
-                    to='/login/'>  login
+                <input className="btn-hover color-1" type="submit" value="Register" />
+                <br />
+
+                <NavLink
+                    style={{ marginLeft: '5px' }}
+                    to='/signup/'>   Or signup
                     </NavLink>
             </Form.Item>
-
         </Form>
     );
 };

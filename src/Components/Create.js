@@ -56,8 +56,8 @@ const Editor = (props) => {
     return (
         <div>
             <input type="text" name="title" placeholder="name your template" id="title" />
-            <button onClick={saveDesign}>Save Design</button>
-            <button onClick={exportHtml}>Export HTML</button>
+            <button className="btn-hover color-2" onClick={saveDesign}>SAVE DESIGN</button>
+            <button className="btn-hover color-5 " onClick={exportHtml}>EXPORT FILE</button>
             <EmailEditor ref={emailEditorRefNew} />
             <DjangoCSRFToken />
 

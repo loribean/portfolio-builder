@@ -21,10 +21,12 @@ class CustomLayout extends React.Component {
                                 <Header>
                                     <div className="logo" />
                                     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                                        <Menu.Item key="4">
+                                            <Link style={{ paddingLeft: '50px' }} to="/">  <img src="https://jeffbredenkamp.neocities.org/geologo.png" alt="logo" class="logo" style={{ width: '32px' }} /></Link></Menu.Item>
                                         <Menu.Item key="2" onClick={this.props.logout}>
                                             Logout</Menu.Item>
                                         <Menu.Item key="1">
-                                            <Link to="/timeline">Resumes</Link></Menu.Item>
+                                            <Link to="/timeline">Timeline</Link></Menu.Item>
                                         <Menu.Item key="3">
                                             <Link to="/mytemplates/">My Templates</Link></Menu.Item>
                                     </Menu>
@@ -46,6 +48,8 @@ class CustomLayout extends React.Component {
                                 <Header>
                                     <div className="logo" />
                                     <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+                                        <Menu.Item key="4">
+                                            <Link style={{ paddingLeft: '50px' }} to="/">  <img src="https://jeffbredenkamp.neocities.org/geologo.png" alt="logo" class="logo" style={{ width: '32px' }} /></Link></Menu.Item>
                                         <Menu.Item key="2">
                                             <Link to="/login">Login</Link></Menu.Item>
                                         <Menu.Item key="3">

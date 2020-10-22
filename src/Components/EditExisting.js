@@ -60,15 +60,15 @@ const EditExisting = (props) => {
                 props.user === parseInt(localStorage.getItem('userdata')) ?
                     <div>
 
-                        <button onClick={saveDesign}>Save Design</button>
-                        <button onClick={exportHtml}>Download HTML</button>
+                        <button className="btn-hover color-2" onClick={saveDesign}>Save Design</button>
+                        <button className="btn-hover color-5" onClick={exportHtml}>Download HTML</button>
                         <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
                         <DjangoCSRFToken />
 
                     </div>
                     : <div>
 
-                        <button onClick={exportHtml}>Download HTML</button>
+                        <button className="btn-hover color-5" onClick={exportHtml}>Download HTML</button>
                         <EmailEditor ref={emailEditorRef} onLoad={onLoad} />
                         <DjangoCSRFToken />
 

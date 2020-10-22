@@ -11,7 +11,7 @@ class Success extends React.Component {
                 subTitle="Let's get started"
                 extra={[
                     <Button type="primary" key="console">
-                        <a href="/timeline">To Home</a>
+                        <a href="/timeline">To Timeline</a>
                     </Button>,
 
                 ]}

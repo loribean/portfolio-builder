@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Input, Button, Spin } from 'antd';
+import { Form, Input, Button, Spin, Space } from 'antd';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions/auth';
 import { NavLink } from 'react-router-dom';
@@ -86,11 +86,12 @@ const Demo = (props) => {
                         </Form.Item>
 
                         <Form.Item {...tailLayout}>
-                            <input type="submit" value="submit" />
-                            Or
-                    <NavLink
-                                style={{ marginRight: '10px' }}
-                                to='/signup/'>  signup
+                            <input className="btn-hover color-1" type="submit" value="Login" />
+                            <br />
+
+                            <NavLink
+                                style={{ marginLeft: '5px' }}
+                                to='/signup/'>   Or signup
                     </NavLink>
                         </Form.Item>
                     </Form>
