@@ -20,7 +20,7 @@ Portfolio builder was built for JOB HUNTERS who:
 - [x] Want to save their work
 - [x] Want to see other’s work
 
-### `ERD DIAGRAM`
+### `FEATURES`
 Features:
 - [x] Users can simply create portfolio site code with drag and drop elements
 - [x] Users can save their work for later
@@ -31,7 +31,7 @@ Features:
 
 
 ### `ERD DIAGRAM`
-[ERD.png]
+[ERD](./ERD.png)
 
 
 
