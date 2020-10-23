@@ -6,7 +6,7 @@
 ### `Goals of Portfolio Builder:` :runner:
 - [x] Get better at React & Redux, Django
 - [x] Create something useful: Now that job hunting is prevalent: I hope that Portfolio Builder will be of some use and make the tough process of finding a new job abit easier :kissing_heart:
-- [x] Create web documents easily without knowing how to code
+- [x] Help people create web documents easily without knowing how to code
 - [x] Easy to create, save and work on it later
 
 
@@ -41,6 +41,9 @@ Portfolio builder was built for JOB HUNTERS who:
 
 Try it here:
 https://portfolio-builder-x.herokuapp.com/
+
+![Gif1](demo/gif1.gif)
+![Gif2](demo/gif2.gif)
 
 ## FURTHERS :raising_hand:
 - [ ] Ability to load fonts
