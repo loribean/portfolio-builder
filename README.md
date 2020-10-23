@@ -4,49 +4,60 @@
 A easy drag and drop editor to build your portfolio 
 
 ### Technologies Used
-
-Django with redux-thunk middleware
-React: For uni-directional dataflow & DRY Components
-Redux: For predictable app state
-Postgres: For database
-Django Rest Framework: To create API endpoints
-DJ_Rest-Auth:REST API endpoints to handle user auth and registration tasks
+- [x] Django with redux-thunk middleware
+- [x] React: For uni-directional dataflow & DRY Components
+- [x] Redux: For predictable app state
+- [x] Postgres: For database
+- [x] Django Rest Framework: To create API endpoints
+- [x] DJ_Rest-Auth:REST API endpoints to handle user auth and registration tasks
 
 
 ### `USER STORIES`
 Portfolio builder was built for JOB HUNTERS who:
-Who don’t know how to code
-Want an easy WYSIWYG editor 
-Want to save their work
-Want to see other’s work
+- [x] Who don’t know how to code
+- [x] Want an easy WYSIWYG editor 
+- [x] Want to save their work
+- [x] Want to see other’s work
+
+### `ERD DIAGRAM`
+Features:
+- [x] Users can simply create portfolio site code with drag and drop elements
+- [x] Users can save their work for later
+- [x]Users can export their work into a HTML file
+- [x]Users can comment on others work and save it for inspiration
 
 
-### `ERD DIAGRAMS`
+
+
+### `ERD DIAGRAM`
+(ERD.png)
 
 
 
 ### `Goals of Portfolio Builder:`
-1.Get better at React & Redux, Django
-2.Create something useful: Now that job hunting is prevalent: I hope that Portfolio Builder will be of some use and make the tough process of finding a new job abit easier
-3.Create web documents easily without knowing how to code
-4.Easy to create, save and work on it later
+- [x] 1.Get better at React & Redux, Django
+- [x] 2.Create something useful: Now that job hunting is prevalent: I hope that Portfolio Builder will be of some use and make the tough process of finding a new job abit easier
+- [x] 3.Create web documents easily without knowing how to code
+- [x] 4.Easy to create, save and work on it later
 
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## DEMO
 
 Try it here:
 https://portfolio-builder-x.herokuapp.com/
 
+## FURTHERS
+- [x] Ability to load fonts
+- [x] Export as PDF
+- [x] Allow for teams, real time editing
+- [x] Social Auth
+- [x] Hired by: features
+- [x] Link it to a job portal 
+
+
 ### Special Thanks to:
 
-Antd Design
-Unlayer
+- [x] Antd Design
+- [x] Undraw.io
+- [x] Unlayer 
 
